@@ -1,0 +1,143 @@
+.packages {
+	&-top {
+		grid-column: col-start 2 / col-end -2;
+		display: flex;
+		height: 234px;
+		align-items: center;
+		justify-content: center;
+		background: url('/images/package-bg.png') top left no-repeat;
+		background-size: cover;
+		position: relative;
+		max-width: 1067px;
+		margin: auto;
+		padding: 1.3rem;
+		margin-bottom: 3.5rem;
+		gap: 6rem;
+		&::before {
+			content: 'Những Điều Băn Khoăn Khi Bạn Sắp Xây Nhà Là Gì?';
+			@extend %sec-h2;
+			display: block;
+			padding: 0.5rem;
+			text-align: center;
+			width: 34vw;
+			position: absolute;
+			top: -6.5rem;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&_item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			// padding: 1.6rem;
+			height: 100%;
+			flex: 0 1 calc(100% / 3);
+			color: black;
+			&--img {
+				margin-bottom: 1.6rem;
+				width: 9.6rem;
+				height: 9.6rem;
+				flex-grow: 1;
+				img {
+					// @extend %img;
+				}
+			}
+			&--title {
+				@extend %sec-title;
+				margin-bottom: 0.8rem;
+			}
+			&--para {
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 24px;
+			}
+			&--title,
+			&--para {
+				text-align: center;
+			}
+			&:first-child {
+				& .packages-top_item--img {
+				}
+			}
+			&:nth-child(2) {
+				& .packages-top_item--img {
+				}
+			}
+			&:nth-child(3) {
+				& .packages-top_item--img {
+				}
+			}
+			&:nth-child(4) {
+				& .packages-top_item--img {
+				}
+			}
+		}
+	}
+	&-middle {
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+		grid-column: col-start 2 / col-end -2;
+		margin-bottom: 4.8rem;
+		h2 {
+			@extend %sec-h2;
+			text-align: center;
+			width: 48vw;
+		}
+		iframe {
+			width: 100%;
+			border-radius: 8px;
+			height: 490px;
+		}
+	}
+
+	@include media-tablet {
+		&-top {
+			flex-direction: column;
+			height: auto;
+			background: none;
+			&::before {
+				top: -6rem;
+			}
+		}
+		&-middle {
+			display: none;
+		}
+	}
+}
+
+.ho-so {
+	display: none;
+	margin-bottom: 0.4rem;
+
+	&.birthday {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), url('/images/ngay-du-sinh.png'),
+			lightgray 50%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin-bottom: 2.4rem;
+	}
+	@include media-tablet {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		grid-column: col-start 2 / col-end -2;
+		border-radius: 8px;
+		height: 151px;
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.55) 100%), url('/images/hoso-dat-ten.png'),
+			lightgray 50%;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		&--title {
+			font-size: 20px;
+			font-weight: 700;
+			line-height: 24px;
+			text-transform: uppercase;
+			color: white;
+			letter-spacing: 0.2rem;
+		}
+	}
+}

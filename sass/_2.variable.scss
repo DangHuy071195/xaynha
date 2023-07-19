@@ -1,0 +1,49 @@
+$colors: (
+	--primary: #b5030a,
+	--secondary: #231f20,
+	--tertiary: #ed1c24,
+	--pink: #f7c6cd,
+	--gray: #9e9e9e,
+);
+
+$break-points: (
+	'break-point-small': 400px,
+	'break-point-medium': 600px,
+	'break-point-tablet': 992px,
+	'break-point-desktop': 1300px,
+);
+
+@function break-point($break-point-limit) {
+	@return map-get($break-points, $break-point-limit);
+}
+@function color($colorName) {
+	@return map-get($colors, $colorName);
+}
+
+@mixin media-desktop {
+	@media screen and (min-width: break-point(break-point-desktop)) {
+		@content;
+	}
+}
+
+//*-*-*-*-*-*-*-*-*-*-- The 800px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-tablet {
+	@media screen and (max-width: break-point(break-point-tablet)) {
+		@content;
+	}
+}
+
+//*-*-*-*-*-*-*-*-*-*-- The 600px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-medium {
+	@media screen and (max-width: break-point(break-point-medium)) {
+		@content;
+	}
+}
+
+//*-*-*-*-*-*-*-*-*-*-- The 400px Mark Break Point*-*-*-*-*-*-*-*-*-*-*
+@mixin media-small {
+	@media screen and (max-width: break-point(break-point-small)) {
+		@content;
+	}
+}
+
