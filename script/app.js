@@ -20,6 +20,8 @@ const swiper = new Swiper('.swiper-2', {
 const swiper1 = new Swiper('.swiper-1', {
 	direction: 'horizontal',
 	loop: true,
+	touchMoveStopPropagation: true,
+
 	pagination: {
 		el: '.swiper-pagination-1',
 		clickable: true,
@@ -33,7 +35,7 @@ const swiper1 = new Swiper('.swiper-1', {
 const swiper2 = new Swiper('.swiper-villa', {
 	direction: 'horizontal',
 	// spaceBetween: 30,
-	slidesPerView: 1,
+	touchMoveStopPropagation: true,
 
 	loop: true,
 	navigation: {
@@ -43,8 +45,9 @@ const swiper2 = new Swiper('.swiper-villa', {
 })
 const swiper3 = new Swiper('.swiper-town', {
 	direction: 'horizontal',
-	slidesPerView: 1,
 	loop: true,
+	touchMoveStopPropagation: true,
+
 	navigation: {
 		nextEl: '.swiper-button-next.swiper-button-next-3',
 		prevEl: '.swiper-button-prev.swiper-button-prev-3',
@@ -52,7 +55,7 @@ const swiper3 = new Swiper('.swiper-town', {
 })
 const swiper4 = new Swiper('.swiper-garden', {
 	direction: 'horizontal',
-	slidesPerView: 1,
+	touchMoveStopPropagation: true,
 	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next.swiper-button-next-4',

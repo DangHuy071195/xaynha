@@ -144,7 +144,8 @@
 			height: auto;
 			display: flex;
 			align-items: center;
-			width: 100%;
+			width: calc(100vw - 45px);
+			overflow: hidden;
 			h3 {
 				z-index: 10;
 			}
@@ -161,8 +162,7 @@
 				align-items: center;
 			}
 			&-item {
-				flex-basis: 174px;
-				width: 70vw;
+				width: calc(100vw - 45px);
 			}
 		}
 	}
