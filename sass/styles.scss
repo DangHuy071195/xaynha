@@ -8,7 +8,7 @@
 	grid-template-columns:
 		[container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content, 14rem) [col-end])
 		[center-end] 1fr [container-end];
-	grid-template-rows: repeat(10, min-content);
+	grid-template-rows: repeat(12, min-content);
 	min-height: 100vh;
 }
 
@@ -20,7 +20,6 @@
 @import '7.package';
 @import '8.slider';
 @import '9.solution';
-@import '10.faqs';
 @import '11.register';
 
 a:link,
@@ -169,16 +168,16 @@ li {
 	h2 {
 		@extend %sec-h2;
 		text-align: center;
+		max-width: 40vw;
 	}
 
 	&__items {
 		display: flex;
 		gap: 1.7rem;
-		flex-wrap: wrap;
 		justify-content: center;
 
 		&-item {
-			flex: 0 1 auto;
+			flex: 0 1 calc((100% - 3.2rem) / 3);
 			height: fit-content;
 			display: flex;
 			flex-direction: column;
@@ -203,20 +202,23 @@ li {
 
 			h6 {
 				@extend %sec-title;
-				white-space: nowrap;
+				// white-space: nowrap;
 				text-align: center;
 			}
 		}
 	}
 
 	@media screen and (max-width: 576px) {
-		& .services__items-item {
-			&--img {
-				width: 164px;
-				height: 164px;
-			}
-			h6 {
-				white-space: unset;
+		& .services__items {
+			flex-wrap: wrap;
+			&-item {
+				&--img {
+					width: 164px;
+					height: 164px;
+				}
+				h6 {
+					white-space: unset;
+				}
 			}
 		}
 	}
@@ -229,7 +231,11 @@ li {
 	display: flex;
 	flex-direction: column;
 	gap: 1.6rem;
-	margin-bottom: 4.8rem;
+	width: 66vw;
+	height: 96px;
+	margin: auto;
+	margin-bottom: 9.6rem;
+
 	h2 {
 		@extend %sec-h2;
 		text-align: center;
@@ -238,7 +244,7 @@ li {
 	&__content {
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		// align-items: center;
 		gap: 6.4rem;
 		&--icons {
 			display: flex;
@@ -247,27 +253,50 @@ li {
 			gap: 5.6rem;
 			img {
 				&:not(:nth-child(2)) {
-					filter: grayscale(0.8);
-					opacity: 0.5;
+					// filter: grayscale(0.8);
+					// opacity: 0.5;
 				}
 			}
 		}
 		&--links {
-			li a {
-				&:link,
-				&:visited {
-					color: #00f;
-					text-align: center;
-					font-size: 2.4rem;
-					line-height: 32px;
-					font-weight: 400;
-					text-decoration-line: underline;
+			ul {
+				overflow: hidden;
+			}
+			li {
+				&.new-link {
+					animation: append 1s ease-in-out forwards;
+				}
+				&:nth-child(2) {
+					animation-delay: 0.2s;
+				}
+				&:nth-child(3) {
+					animation-delay: 0.4s;
+				}
+				&:nth-child(4) {
+					animation-delay: 0.6s;
+				}
+				& a {
+					&:link,
+					&:visited {
+						color: #00f;
+						text-align: center;
+						font-size: 2.4rem;
+						line-height: 32px;
+						font-weight: 400;
+						text-decoration-line: underline;
+						white-space: nowrap;
+					}
 				}
 			}
 		}
 		&-mob {
 			display: none;
 		}
+	}
+
+	@include media-tablet {
+		height: auto;
+		margin-bottom: 4.8rem;
 	}
 	@media screen and (max-width: 768px) {
 		&__content {
@@ -308,3 +337,55 @@ li {
 .test {
 	grid-column: container-start / container-end;
 }
+
+.survey {
+	grid-column: col-start 2 / col-end -2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.4rem;
+	margin-bottom: 5.2rem;
+	h2 {
+		@extend %sec-h2;
+		text-align: center;
+		max-width: 47vw;
+	}
+	iframe {
+		border-radius: 8px;
+		width: 100%;
+		height: 490px;
+	}
+}
+
+@keyframes append {
+	from {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+}
+
+// *************************** SURVEY ***************************
+.survey {
+	&-step {
+		li {
+			width: 24px;
+			height: 24px;
+			border: 1px solid black;
+			padding: 0.5rem;
+			border-radius: 50%;
+			background-color: #000;
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
+

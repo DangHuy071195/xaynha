@@ -2,28 +2,16 @@
 	&-top {
 		grid-column: col-start 2 / col-end -2;
 		display: flex;
-		height: 234px;
-		align-items: center;
-		justify-content: center;
-		background: url('/images/package-bg.png') top left no-repeat;
-		background-size: cover;
-		position: relative;
-		max-width: 1067px;
-		margin: auto;
-		padding: 1.3rem;
-		margin-bottom: 3.5rem;
-		gap: 6rem;
-		&::before {
-			content: 'Những Điều Băn Khoăn Khi Bạn Sắp Xây Nhà Là Gì?';
-			@extend %sec-h2;
-			display: block;
-			padding: 0.5rem;
+		flex-direction: column;
+		h3 {
+			font-size: 34px;
+			font-weight: 700;
+			line-height: 40px;
+			color: black;
 			text-align: center;
-			width: 34vw;
-			position: absolute;
-			top: -6.5rem;
-			left: 50%;
-			transform: translateX(-50%);
+			padding: 0.5rem;
+			width: 41vwswiper-item;
+			margin: auto;
 		}
 		&_item {
 			display: flex;
@@ -35,9 +23,8 @@
 			color: black;
 			&--img {
 				margin-bottom: 1.6rem;
-				width: 9.6rem;
-				height: 9.6rem;
-				flex-grow: 1;
+				width: 10rem;
+				height: 10rem;
 				img {
 					// @extend %img;
 				}
@@ -73,9 +60,25 @@
 			}
 		}
 	}
+	&-top_items {
+		display: flex;
+		height: 234px;
+		align-items: center;
+		justify-content: center;
+		background: url('/images/package-bg.png') top left no-repeat;
+		background-size: cover;
+		position: relative;
+		max-width: 1067px;
+		margin: auto;
+		padding: 1.3rem;
+		margin-bottom: 3.5rem;
+		gap: 6rem;
+	}
+
 	&-middle {
 		display: flex;
 		flex-direction: column;
+		align-items: center;
 		gap: 2.4rem;
 		grid-column: col-start 2 / col-end -2;
 		margin-bottom: 4.8rem;
@@ -92,13 +95,10 @@
 	}
 
 	@include media-tablet {
-		&-top {
+		&-top_items {
 			flex-direction: column;
 			height: auto;
 			background: none;
-			&::before {
-				top: -6rem;
-			}
 		}
 		&-middle {
 			display: none;
@@ -141,3 +141,4 @@
 		}
 	}
 }
+

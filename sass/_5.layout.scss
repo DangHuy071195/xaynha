@@ -2,6 +2,7 @@
 	grid-column: container-start / container-end;
 	height: 5.6rem;
 	background-color: red;
+	margin-top: 4.8rem;
 }
 
 .header {
@@ -73,13 +74,16 @@
 			flex-direction: column;
 			gap: 0.8rem;
 			flex: 0 0 520px;
-			span {
+			& > span {
 				@extend %sec-title;
 				font-weight: 700;
 			}
 			p {
 				font-size: 1.6rem;
 				line-height: 2.4rem;
+				& > span {
+					font-weight: 700;
+				}
 			}
 		}
 		&__others {
@@ -124,3 +128,4 @@
 		}
 	}
 }
+

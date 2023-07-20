@@ -1,139 +1,134 @@
 .slider {
 	grid-column: container-start / container-end;
 	height: 300px;
-	background-color: color(--pink);
+	background-color: color(--tertiary);
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 4.8rem;
-
-	&_btn {
-		position: absolute;
-		cursor: pointer;
-		background-size: cover;
-		background-repeat: no-repeat;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 33px;
-		height: 57px;
-		border: none;
-		outline: none;
-		background: transparent;
-		cursor: pointer;
-		z-index: 1;
-
-		&--left {
-			background-image: url('/images/icons/prev-btn.svg');
-			left: 2rem;
-		}
-
-		&--right {
-			background-image: url('/images/icons/next-btn.svg');
-			right: 2rem;
-		}
-	}
-	&_img-container {
-		height: 100%;
-		width: 100%;
-		position: relative;
-		&--list {
-			position: relative;
-			width: 100%;
-			height: 100%;
-			transition: transform 0.3s ease-in-out;
-
-			&__item {
-				justify-content: center;
-				gap: 5rem;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-
-				& .slider-content {
-					max-width: 1200px;
-					margin: auto;
-					height: 100%;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					gap: 5rem;
-				}
-				&-title {
-					@extend %sec-title;
-					flex-basis: 23.333%;
-					flex-grow: 0.3333;
-				}
-
-				&-para {
-					@extend %sec-para;
-					flex-basis: 29.444%;
-					flex-grow: 0.3333;
-				}
-
-				&-separator {
-					height: 15.6rem;
-					width: 0.5rem;
-					background-color: black;
-				}
-			}
-		}
-	}
-
-	&_nav {
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-row: 1fr;
-		height: 1.2rem;
-		grid-gap: 0.8rem;
-		margin-bottom: 12px;
-		&--btn {
-			width: 12px;
-			height: 12px;
-			border-radius: 50%;
-			background-color: white;
-			border: none;
-			outline: none;
-			cursor: pointer;
-		}
-	}
-
-	@include media-tablet {
-		height: 300px;
-		border-radius: 8px;
-		grid-column: col-start 2 / col-end -2;
-		&_btn {
-			display: none;
-		}
-
-		& .slider-content {
-			flex-direction: column;
-			padding: 0.8rem;
-			gap: 0.8rem;
-			& .slider_img-container--list__item-separator {
-				display: none;
-			}
-			h3 {
-				flex: 0 0 auto !important;
-				text-align: center;
-			}
-		}
-	}
 }
 
-.current--dot {
-	background-color: color(--gray);
-}
-
-.disabled {
-	cursor: not-allowed;
-	display: none;
-}
 .swiper-top {
 	width: 1440px;
 	height: 300px;
 }
+
+.swiper-item {
+	display: flex;
+	gap: 5vw;
+	align-items: center;
+	height: 100%;
+	max-width: 80vw;
+	margin: 0 auto;
+	color: white;
+	h2 {
+		@extend %sec-h2;
+	}
+	p {
+		@extend %sec-para;
+	}
+	@include media-tablet {
+		flex-direction: column;
+		justify-content: center;
+
+		.line-2 {
+			display: none;
+		}
+	}
+}
+@include media-tablet {
+	.swiper-button-next-1,
+	.swiper-button-prev-1 {
+		display: none;
+	}
+}
+
+.line-2 {
+	height: 16.6rem;
+	width: 0.5rem;
+	background-color: white;
+	border-radius: 2.1rem;
+}
+
+.swiper-1 {
+	height: 100%;
+}
+
+.swiper-pagination {
+	z-index: 2;
+	&-bullet {
+		width: 12px;
+		height: 12px;
+		background-color: #706a6a;
+		&-active {
+			background-color: white;
+		}
+	}
+}
+
+// .swiper-pagination-progressbar-fill {
+// 	background-color: blue;
+// }
+.red {
+	// background-color: black;
+}
+
+.swiper-2 {
+	width: 90px;
+	height: 50px;
+	.swiper-slide {
+		& > div {
+			transition: all 200ms linear;
+			transform: scale(0.8);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		&.swiper-slide-active {
+			& > div {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.swiper-3-item {
+	img {
+		@extend %img;
+	}
+}
+
+.slick-track {
+}
+
+.slick-active {
+	padding: 20px 0;
+}
+
+.slick-center img {
+	transform: scale(1.8);
+	transition: all 0.5s ease-in-out;
+}
+
+.slick-slide:not(.slick-active) {
+	margin: 20px 0;
+	filter: grayscale(0.8);
+}
+
+.child {
+	width: 80%;
+}
+.slide:not(.slick-active) {
+	cursor: pointer;
+	text-align: center;
+}
+
+.pagination {
+	text-align: center;
+	color: #fff;
+	font-size: 1.2rem;
+}
+
+.slider-1 {
+	width: 460px;
+}
+

@@ -43,12 +43,12 @@
 			align-items: center;
 			button {
 				width: 100%;
-				color: #000;
+				color: #fff;
 				font-size: 16px;
 				font-weight: 700;
 				line-height: 24px;
 				border-radius: 8px;
-				background: #ff5757;
+				background: color(--primary);
 				border: none;
 				outline: none;
 				line-height: 40px;
@@ -68,24 +68,28 @@
 
 			h2 {
 				@extend %sec-h2;
-				margin-bottom: 2.4rem;
+				margin-bottom: 0.8rem;
 				text-align: center;
 			}
 			&-item {
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				height: 296px;
-				width: 373px;
+				height: 192px;
+				width: 100%;
 				background-size: cover;
 				border-radius: 0.8rem;
 
 				&:first-of-type {
-					background: url('/images/box-bg-1.png') top left no-repeat;
+					background: url('/images/biet-thu.png') top left no-repeat;
+					margin-bottom: 1.6rem;
+				}
+				&:nth-child(2) {
+					background: url('/images/nhavuon.png') top left no-repeat;
 					margin-bottom: 1.6rem;
 				}
 				&:last-of-type {
-					background: url('/images/box-bg-2.png') top left no-repeat;
+					background: url('/images/nhapho.png') top left no-repeat;
 				}
 				h3 {
 					color: white;

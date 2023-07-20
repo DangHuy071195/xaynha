@@ -1,153 +1,15 @@
-const list = document.querySelector('.slider_img-container--list')
-const items = Array.from(list.children)
-const prev = document.querySelector('.slider_btn.slider_btn--left')
-const next = document.querySelector('.slider_btn.slider_btn--right')
-const sliderNav = document.querySelector('.slider_nav')
-const dots = Array.from(sliderNav.children)
-
-const itemWidth = items[0].getBoundingClientRect().width
-console.log('prev', prev)
-console.log('next', next)
-
-const setItemPos = (item, idx) => {
-	item.style.left = itemWidth * idx + 'px'
-}
-items.forEach(setItemPos)
-
-const moveToImg = (list, curItem, targetItem) => {
-	console.log('list', list)
-	console.log('targetItem', targetItem.style.left)
-	list.style.transform = 'translateX(-' + targetItem.style.left + ')'
-	curItem.classList.remove('current--slider')
-	targetItem.classList.add('current--slider')
-}
-
-const hideButton = (items, prevBtn, nextBtn, targetIdx) => {
-	if (targetIdx === 0) {
-		prevBtn.classList.add('disabled')
-		prevBtn.disabled = true
-		nextBtn.classList.remove('disabled')
-	} else if (targetIdx === items.length - 1) {
-		prevBtn.classList.remove('disabled')
-		nextBtn.classList.add('disabled')
-		nextBtn.disabled = true
-	} else {
-		prevBtn.classList.remove('disabled')
-		nextBtn.classList.remove('disabled')
-		nextBtn.disabled = false
-		prevBtn.disabled = false
-	}
-}
-
-const updateDots = (curDot, tarDot) => {
-	console.log('curDot', curDot)
-	console.log('tarDot', tarDot)
-	curDot.classList.remove('current--dot')
-	tarDot.classList.add('current--dot')
-}
-
-prev.addEventListener('click', (e) => {
-	const curItem = list.querySelector('.current--slider')
-	const prevItem = curItem.previousElementSibling
-	const curDot = sliderNav.querySelector('.current--dot')
-	const prevDot = curDot.previousElementSibling
-	const prevIdx = items.findIndex((item) => item === prevItem)
-	console.log('prevItem', prevItem)
-
-	moveToImg(list, curItem, prevItem)
-	updateDots(curDot, prevDot)
-	hideButton(items, prev, next, prevIdx)
-})
-
-next.addEventListener('click', (e) => {
-	const curItem = list.querySelector('.current--slider')
-	const nextItem = curItem.nextElementSibling
-	const curDot = sliderNav.querySelector('.current--dot')
-	const nextDot = curDot.nextElementSibling
-	const nextIdx = items.findIndex((item) => item === nextItem)
-
-	moveToImg(list, curItem, nextItem)
-	updateDots(curDot, nextDot)
-	hideButton(items, prev, next, nextIdx)
-})
-
-const tabs = document.querySelector('.heading-bars')
-const tabItems = Array.from(tabs.children)
-const showContentPara = document.querySelector('.solutions-content__info-text-data')
-showContentPara.innerText = tabs.querySelector('.heading-bar--active').getAttribute('data-text')
-
-const clickTab = (item, idx) => {
-	item.addEventListener('click', (e) => {
-		console.log('run here')
-		showContentPara.innerText = item.getAttribute('data-text')
-		const activeTab = tabs.querySelector('.heading-bar--active')
-		// const activeIdx = tabItems.findIndex(tab => tab === item)
-		activeTab.classList.remove('heading-bar--active')
-		item.classList.add('heading-bar--active')
-	})
-}
-
-tabItems.forEach((item, idx) => {
-	clickTab(item, idx)
-})
-
-sliderNav.addEventListener('click', (e) => {
-	const targetDot = e.target.closest('button')
-	if (!targetDot) return
-
-	const curItem = list.querySelector('.current--slider')
-	const curDot = sliderNav.querySelector('.current--dot')
-	const targetIdx = dots.findIndex((dot) => dot === targetDot)
-	const targetItem = items[targetIdx]
-
-	moveToImg(list, curItem, targetItem)
-	updateDots(curDot, targetDot)
-	hideButton(items, prev, next, targetIdx)
-})
-const faqs = document.querySelector('.faqs-questions')
-const faqItems = Array.from(faqs.children)
-
-const clickFaq = (item, idx) => {
-	item.addEventListener('click', (e) => {
-		console.log('run here')
-		item.classList.add('faqs-active')
-		console.log(Array.from(item.classList))
-		const para = document.createElement('p')
-		para.innerText = item.getAttribute('data-text')
-		const arrowLogo = item.querySelector('img')
-
-		if (!Array.from(item.classList).includes(`open-${idx}`)) {
-			item.classList.add(`open-${idx}`)
-			item.appendChild(para)
-			arrowLogo.src = '/images/icons/arrow-circle-down.png'
-		} else {
-			const curItem = document.querySelector(`.open-${idx}`)
-			curItem.classList.remove(`open-${idx}`)
-			curItem.classList.remove(`faqs-active`)
-			curItem.removeChild(curItem.querySelector('p'))
-			arrowLogo.src = '/images/icons/arrow-circle.png'
-		}
-	})
-}
-
-faqItems.forEach((item, idx) => clickFaq(item, idx))
-
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-2', {
 	// Optional parameters
 	direction: 'horizontal',
 	loop: true,
 
 	// If we need pagination
 	pagination: {
-		el: '.swiper-pagination',
+		el: '.swiper-pagination-2',
 		clickable: true,
 	},
 
 	// Navigation arrows
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
 
 	// And if we need scrollbar
 	scrollbar: {
@@ -155,13 +17,104 @@ const swiper = new Swiper('.swiper', {
 	},
 })
 
-var swiper1 = new Swiper('.swiper1', {
+const swiper1 = new Swiper('.swiper-1', {
 	direction: 'horizontal',
-	pagination: '.swiper-pagination1',
-	paginationClickable: true,
+	loop: true,
+	pagination: {
+		el: '.swiper-pagination-1',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next.swiper-button-next-1',
+		prevEl: '.swiper-button-prev.swiper-button-prev-1',
+	},
 })
-var swiper2 = new Swiper('.swiper2', {
-	pagination: '.swiper-pagination2',
-	paginationClickable: true,
-	direction: 'horizontal',
+var $st = $('.pagination')
+var $slickEl = $('.center')
+
+$slickEl.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+	var i = (currentSlide ? currentSlide : 0) + 1
+	$st.text(i + ' of ' + slick.slideCount)
+	console.log('slick', slick)
+	console.log('currentSlide', currentSlide)
+	const currentSlideElm = document.querySelector('.slick-slide.slick-current')
+	const currentSocialAlt = currentSlideElm.querySelector('img').getAttribute('alt')
+	console.log('currentSocialAlt', currentSocialAlt)
+	// const curSlideElm =
+	const infoLinks = {
+		tiktok: [
+			{ url: 'https://www.tiktok.com/@thaytamnguyen2603', text: 'Phong Thủy Tam Nguyên' },
+			{ url: 'https://www.tiktok.com/@tamnguyenchannel263', text: 'Tam Nguyen Channel' },
+		],
+		facebook: [
+			{ url: 'https://www.facebook.com/thayphongthuytamnguyen.official', text: 'Phong thủy Tam Nguyên - Tam Hợp Phái' },
+			{ url: 'https://www.facebook.com/thayphongthuytamnguyen.official', text: 'Phong Thủy Tam Nguyên TP.HCM' },
+			{ url: 'https://www.facebook.com/thayphongthuytamnguyen2603', text: 'Phong Thủy Sư Tam Nguyên' },
+		],
+		youtube: [
+			{
+				url: 'https://www.youtube.com/@kientrucphongthuytamnguyen/videos?themeRefresh=1',
+				text: 'Kiến trúc Phong thủy Tam Nguyên',
+			},
+			{
+				url: 'https://www.youtube.com/channel/UCQOzqgd9oXUgFaL-qPWK6-g',
+				text: 'Thầy Phong Thủy Tam Nguyên',
+			},
+			{
+				url: 'https://studio.youtube.com/channel/UCj4PxQr88piCaijUHdHBt5Q?c=UCj4PxQr88piCaijUHdHBt5Q',
+				text: 'Tam Nguyên Channel',
+			},
+		],
+
+		zalo: [
+			{
+				url: 'https://rd.zapps.vn/detail/3277426331189217616?zarsrc=33&utm_campaign=zalo&broadcastId=fce4da50c015294b7004&utm_medium=zalo&id=7bfb229abddf54810dce&pageId=3277426331189217616&utm_source=zalo',
+				text: 'Phong Thủy Tam Nguyên TP.HCM',
+			},
+			{ url: 'https://zalo.me/170565369197849185', text: 'Phong Thủy Tam Nguyên' },
+		],
+	}
+	const socialLinkContainer = document.querySelector('.contact-socials__content--links')
+	const ulElm = socialLinkContainer.querySelector('ul')
+	const currentLinkInfos = infoLinks[currentSocialAlt]
+	console.log('currentLinkInfos', currentLinkInfos)
+	ulElm.innerHTML = ''
+	currentLinkInfos.forEach((item) => {
+		const newLink = document.createElement('li')
+		newLink.innerHTML = `<a href='${item.url}'>${item.text}</a>`
+		newLink.classList.add('new-link')
+		ulElm.appendChild(newLink)
+	})
 })
+
+$slickEl.slick({
+	centerMode: true,
+	centerPadding: '50px',
+	slidesToShow: 2,
+	focusOnSelect: true,
+	dots: false,
+	infinite: true,
+	arrows: false,
+
+	responsive: [
+		{
+			breakpoint: 768,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '40px',
+				slidesToShow: 1,
+			},
+		},
+		{
+			breakpoint: 480,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '40px',
+				slidesToShow: 1,
+			},
+		},
+	],
+})
+

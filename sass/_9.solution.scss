@@ -10,7 +10,7 @@
 		margin-bottom: 4.8rem;
 		&__btn {
 			border-radius: 8px;
-			background: #ff5757;
+			background: color(--primary);
 			padding: 0.8rem 3.2rem;
 			border: none;
 			outline: none;
@@ -43,111 +43,11 @@
 				font-size: 3.4rem;
 				font-weight: 700;
 				line-height: 4rem;
+				text-align: center;
+				width: 44vw;
+				margin: auto;
 			}
 			margin-bottom: 0.8rem;
-		}
-
-		&__info {
-			display: flex;
-			gap: 2.4rem;
-			margin-bottom: 2.4rem;
-			&-text {
-				display: flex;
-				flex-direction: column;
-				flex: 0 0 350px;
-				border-radius: 8px;
-				height: 49rem;
-				padding: 0.8rem 1.6rem;
-				border: 1px solid rgba(0, 0, 0, 0.25);
-				background: white;
-				box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.25);
-				& > p {
-					flex-grow: 1;
-					font-size: 1.6rem;
-					line-height: 2.4rem;
-					letter-spacing: -0.32px;
-				}
-				& .heading-bars {
-					display: flex;
-					width: 100%;
-					gap: 0.8rem;
-					margin-bottom: 1.6rem;
-					li {
-						padding: 0 1rem 1rem 1rem;
-						border-bottom: 1px solid #000;
-						cursor: pointer;
-						transition: font-weight 0.3s ease;
-						display: flex;
-						justify-content: center;
-						&.heading-bar--active {
-							border-bottom-width: 5px;
-							span {
-								font-weight: 700;
-							}
-						}
-						span {
-							color: #000;
-							font-size: 20px;
-							line-height: 24px;
-							height: 29px;
-							font-weight: 400;
-							white-space: nowrap;
-						}
-					}
-				}
-			}
-
-			&-video {
-				border-radius: 0.8rem;
-				border: 1px solid #000;
-				flex-grow: 1;
-
-				iframe {
-					width: 100%;
-					height: 100%;
-					border-radius: 0.8rem;
-				}
-			}
-			&--bottom {
-				display: flex;
-				gap: 1.6rem;
-				& .item-left {
-					flex-basis: calc(60% - 0.4rem);
-					border-radius: 0.8rem;
-					img {
-						@extend %img;
-						border-radius: 0.8rem;
-					}
-				}
-				& .item-right {
-					display: flex;
-					flex-direction: column;
-					gap: 0.8rem;
-					flex-basis: calc(40% - 0.4rem);
-					&--img {
-						display: flex;
-						align-items: center;
-						justify-content: center;
-						width: 100%;
-						height: 233px;
-						position: relative;
-						border-radius: 0.8rem;
-						h2 {
-							@extend %sec-h2;
-							text-align: center;
-							color: white;
-							position: absolute;
-							top: 50%;
-							left: 50%;
-							transform: translate(-50%, -50%);
-						}
-						img {
-							@extend %img;
-							border-radius: 0.8rem;
-						}
-					}
-				}
-			}
 		}
 	}
 
@@ -161,28 +61,6 @@
 					text-align: center;
 				}
 			}
-
-			&__info {
-				flex-direction: column-reverse;
-				&-video {
-					flex-basis: 490px;
-					flex-grow: 1;
-					iframe {
-						object-fit: cover;
-					}
-				}
-
-				&-text {
-					flex-basis: auto;
-					height: fit-content;
-				}
-				&--bottom {
-					// flex-direction: column;
-					// & .item {
-					// 	flex-basis: 150px;
-					// }
-				}
-			}
 		}
 
 		&-booking {
@@ -191,16 +69,6 @@
 	}
 
 	@include media-medium {
-		&-content__info--bottom {
-			flex-direction: column;
-			& .item {
-				height: 150px;
-				flex: 0 0 150px;
-				&-right {
-					gap: 1.6rem;
-				}
-			}
-		}
 	}
 }
 
