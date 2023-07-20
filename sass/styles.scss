@@ -251,20 +251,15 @@ li {
 			align-items: center;
 			justify-content: space-between;
 			gap: 5.6rem;
-			img {
-				&:not(:nth-child(2)) {
-					// filter: grayscale(0.8);
-					// opacity: 0.5;
-				}
-			}
 		}
 		&--links {
+			width: 32vw;
 			ul {
 				overflow: hidden;
 			}
 			li {
 				&.new-link {
-					animation: append 1s ease-in-out forwards;
+					animation: append 0.5s ease-in-out forwards;
 				}
 				&:nth-child(2) {
 					animation-delay: 0.2s;

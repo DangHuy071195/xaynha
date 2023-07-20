@@ -22,7 +22,6 @@
   grid-column: container-start/container-end;
   height: 5.6rem;
   background-color: red;
-  margin-top: 4.8rem;
 }
 
 .header-content {
@@ -486,6 +485,7 @@
   width: 100%;
   background-size: cover;
   border-radius: 0.8rem;
+  width: 448px;
 }
 .register-form__box-item:first-of-type {
   background: url("/images/biet-thu.png") top left no-repeat;
@@ -508,6 +508,7 @@
 .register-form__box-items {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
 }
 @media screen and (max-width: 992px) {
@@ -742,11 +743,14 @@ li {
   justify-content: space-between;
   gap: 5.6rem;
 }
+.contact-socials__content--links {
+  width: 32vw;
+}
 .contact-socials__content--links ul {
   overflow: hidden;
 }
 .contact-socials__content--links li.new-link {
-  animation: append 1s ease-in-out forwards;
+  animation: append 0.5s ease-in-out forwards;
 }
 .contact-socials__content--links li:nth-child(2) {
   animation-delay: 0.2s;
