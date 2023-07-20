@@ -1,6 +1,27 @@
+@font-face {
+	font-family: SVN-Century Gothic;
+	font-weight: 900;
+	src: url('/fonts/SVN-CenturyGothic-Black.otf') format('opentype');
+}
+
+@font-face {
+	font-family: SVN-Century Gothic;
+	font-weight: 700;
+	src: url('/fonts/SVN-CenturyGothic-Bold.otf') format('opentype');
+}
+@font-face {
+	font-family: SVN-Century Gothic;
+	font-weight: 600;
+	src: url('/fonts/SVN-CenturyGothic-SemiBold.otf') format('opentype');
+}
+@font-face {
+	font-family: SVN-Century Gothic;
+	font-weight: 400;
+	src: url('/fonts/SVN-CenturyGothic-Regular.otf') format('opentype');
+}
 :root {
 	font-size: 10px;
-	font-family: SVN-Century Gothic;
+	font-family: SVN-Century Gothic, sans-serif;
 }
 
 .container {
@@ -44,6 +65,7 @@ li {
 	font-size: 2rem;
 	font-weight: 700;
 	line-height: 2.4rem;
+	text-align: center;
 }
 %sec-para {
 	font-size: 1.6rem;
@@ -55,11 +77,13 @@ li {
 	font-size: 3.4rem;
 	font-weight: 700;
 	line-height: 4rem;
+	text-align: center;
 }
 
 %sec-h5 {
 	font-size: 2.4rem;
 	line-height: 3.2rem;
+	text-align: center;
 }
 
 %sec-btn {
@@ -76,31 +100,31 @@ li {
 	margin-bottom: 6rem;
 	grid-column: container-start / container-end;
 	&__img {
-		position: absolute;
-		top: 0;
-		left: 0;
 		width: 100%;
 		height: 100%;
+		position: relative;
 		img {
 			width: 100%;
-			height: 100%;
-			object-fit: cover;
+			height: auto;
 		}
 	}
-	height: 551px;
+	// height: 551px;
 	position: relative;
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 15vw;
-	padding-top: 4.8rem;
 
 	& .author-info {
 		display: flex;
 		flex-direction: column;
-		gap: 1.6rem;
+		height: 100%;
+		gap: 0.8rem;
 		color: white;
 		flex: 0 2 454px;
 		z-index: 1;
+		position: absolute;
+		right: 14vw;
+		top: 0;
+		padding: 1.2rem 0;
+		padding-top: calc(1.2rem + 2vw);
+		width: calc(14.4rem + 21vw);
 		&__name {
 			font-size: 4.8rem;
 			font-weight: 700;
@@ -108,7 +132,9 @@ li {
 			text-align: center;
 		}
 		p {
-			@extend %sec-para;
+			font-size: calc(1.2rem + 0.2vw);
+			font-weight: 400;
+			line-height: 24px;
 		}
 
 		& .swiper {
@@ -125,20 +151,47 @@ li {
 		}
 	}
 
+	@media screen and (max-width: 1440px) {
+		&::before {
+			content: 'Phong Thủy Sư Tam Nguyên';
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: -6rem;
+			font-size: 48px;
+			font-weight: 700;
+			line-height: 56px;
+			width: 100%;
+		}
+		& .author-info {
+			h3 {
+				display: none;
+			}
+		}
+	}
+
 	@include media-tablet {
 		padding-bottom: 1.6rem;
-
 		& .author-info {
 			flex-basis: 35%;
+			// padding: 0;
+			right: 0;
+
 			& .swiper {
 				display: block;
-				width: 38vw;
-				height: fit-content;
+				width: calc(12.4rem + 21vw);
+				height: 100%;
+				p {
+				}
 			}
 			& > p {
 				display: none;
 			}
 		}
+	}
+
+	@media screen and (max-width: 576px) {
 	}
 }
 
@@ -350,6 +403,12 @@ li {
 		width: 100%;
 		height: 490px;
 	}
+
+	@include media-tablet {
+		h2 {
+			max-width: 100%;
+		}
+	}
 }
 
 @keyframes append {
@@ -379,6 +438,67 @@ li {
 				left: 0;
 				width: 24px;
 				height: 24px;
+			}
+		}
+	}
+}
+
+// *************************** SURVEY ***************************
+.template {
+	grid-column: col-start 2 / col-end -2;
+	margin-bottom: 4.8rem;
+	h2 {
+		@extend %sec-h2;
+		margin-bottom: 1.6rem;
+	}
+
+	&-items {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.8rem;
+		&_item {
+			border-radius: 0.8rem;
+			position: relative;
+			flex-basis: calc(50% - 0.4rem);
+			cursor: pointer;
+			h4 {
+				text-align: center;
+				font-size: 34px;
+				font-weight: 700;
+				line-height: 40px;
+				color: white;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			& > img {
+				width: 100%;
+				height: auto;
+				&:last-of-type {
+					display: none;
+				}
+			}
+		}
+	}
+	@media screen and (max-width: 1440px) {
+		margin-bottom: 9.6rem;
+	}
+
+	@media screen and (max-width: 992px) {
+		&-items {
+			&_item {
+				& > img {
+					&:first-of-type {
+						display: none;
+					}
+					&:last-of-type {
+						display: block;
+					}
+				}
 			}
 		}
 	}

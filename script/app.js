@@ -29,6 +29,36 @@ const swiper1 = new Swiper('.swiper-1', {
 		prevEl: '.swiper-button-prev.swiper-button-prev-1',
 	},
 })
+
+const swiper2 = new Swiper('.swiper-villa', {
+	direction: 'horizontal',
+	// spaceBetween: 30,
+	slidesPerView: 1,
+
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next.swiper-button-next-2',
+		prevEl: '.swiper-button-prev.swiper-button-prev-2',
+	},
+})
+const swiper3 = new Swiper('.swiper-town', {
+	direction: 'horizontal',
+	slidesPerView: 1,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next.swiper-button-next-3',
+		prevEl: '.swiper-button-prev.swiper-button-prev-3',
+	},
+})
+const swiper4 = new Swiper('.swiper-garden', {
+	direction: 'horizontal',
+	slidesPerView: 1,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next.swiper-button-next-4',
+		prevEl: '.swiper-button-prev.swiper-button-prev-4',
+	},
+})
 var $st = $('.pagination')
 var $slickEl = $('.center')
 
@@ -117,4 +147,20 @@ $slickEl.slick({
 		},
 	],
 })
+
+window.onresize = function (event) {
+	console.log('resizing')
+	console.log(window.innerWidth)
+	const banner1 = document.querySelector('.banner-1__img')
+	const bannerImg = banner1.querySelector('img')
+	if (window.innerWidth < 576) {
+		bannerImg.src = '/images/banner-1-mob.png'
+		bannerImg.width = 375
+		bannerImg.height = 282
+	} else {
+		bannerImg.src = '/images/thay-tam-nguyen.png'
+		bannerImg.width = 1440
+		bannerImg.height = 551
+	}
+}
 

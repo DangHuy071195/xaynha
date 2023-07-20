@@ -65,13 +65,6 @@
 	}
 }
 
-// .swiper-pagination-progressbar-fill {
-// 	background-color: blue;
-// }
-.red {
-	// background-color: black;
-}
-
 .swiper-2 {
 	width: 90px;
 	height: 50px;
@@ -96,10 +89,7 @@
 		@extend %img;
 	}
 }
-
-.slick-track {
-}
-
+// ************************************** SLICK SLIDE **************************************
 .slick-active {
 	padding: 20px 0;
 }
@@ -130,5 +120,32 @@
 
 .slider-1 {
 	width: 460px;
+}
+
+// ************************************** SWIPER **************************************
+
+.swiper-villa,
+.swiper-town,
+.swiper-garden {
+	width: calc(100vw - 45px);
+	.swiper-slide {
+		text-align: center;
+		padding: 0 45px;
+		> img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+@include media-small {
+	// .swiper-button-prev-4,
+	// .swiper-button-prev-2,
+	// .swiper-button-prev-3,
+	// .swiper-button-next-3,
+	// .swiper-button-next-2,
+	// .swiper-button-next-4 {
+	// 	display: none;
+	// }
 }
 

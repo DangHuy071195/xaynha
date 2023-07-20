@@ -1,6 +1,27 @@
+@charset "UTF-8";
+@font-face {
+  font-family: SVN-Century Gothic;
+  font-weight: 900;
+  src: url("/fonts/SVN-CenturyGothic-Black.otf") format("opentype");
+}
+@font-face {
+  font-family: SVN-Century Gothic;
+  font-weight: 700;
+  src: url("/fonts/SVN-CenturyGothic-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: SVN-Century Gothic;
+  font-weight: 600;
+  src: url("/fonts/SVN-CenturyGothic-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: SVN-Century Gothic;
+  font-weight: 400;
+  src: url("/fonts/SVN-CenturyGothic-Regular.otf") format("opentype");
+}
 :root {
   font-size: 10px;
-  font-family: SVN-Century Gothic;
+  font-family: SVN-Century Gothic, sans-serif;
 }
 
 .container {
@@ -53,7 +74,8 @@
   height: 100%;
 }
 .main-banner-img img {
-  margin-bottom: 4.8rem;
+  width: 100%;
+  height: auto;
 }
 
 #footer {
@@ -83,15 +105,12 @@
   gap: 0.8rem;
   flex: 0 0 520px;
 }
-.footer-info__addresses > span {
+.footer-info__addresses span {
   font-weight: 700;
 }
 .footer-info__addresses p {
   font-size: 1.6rem;
   line-height: 2.4rem;
-}
-.footer-info__addresses p > span {
-  font-weight: 700;
 }
 .footer-info__others {
   display: flex;
@@ -350,6 +369,24 @@
   width: 460px;
 }
 
+.swiper-villa,
+.swiper-town,
+.swiper-garden {
+  width: calc(100vw - 45px);
+}
+.swiper-villa .swiper-slide,
+.swiper-town .swiper-slide,
+.swiper-garden .swiper-slide {
+  text-align: center;
+  padding: 0 45px;
+}
+.swiper-villa .swiper-slide > img,
+.swiper-town .swiper-slide > img,
+.swiper-garden .swiper-slide > img {
+  width: 100%;
+  height: auto;
+}
+
 .solutions {
   grid-column: col-start 2/col-end -2;
   flex-direction: column;
@@ -406,6 +443,11 @@
   }
   .solutions-booking {
     margin-bottom: 1.6rem;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .solutions {
+    margin-bottom: 4.8rem;
   }
 }
 .register {
@@ -486,19 +528,14 @@
   background-size: cover;
   border-radius: 0.8rem;
   width: 448px;
-}
-.register-form__box-item:first-of-type {
-  background: url("/images/biet-thu.png") top left no-repeat;
+  position: relative;
   margin-bottom: 1.6rem;
-}
-.register-form__box-item:nth-child(2) {
-  background: url("/images/nhavuon.png") top left no-repeat;
-  margin-bottom: 1.6rem;
-}
-.register-form__box-item:last-of-type {
-  background: url("/images/nhapho.png") top left no-repeat;
 }
 .register-form__box-item h3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: white;
   text-align: center;
   font-size: 3.4rem;
@@ -511,13 +548,14 @@
   align-items: center;
   width: 100%;
 }
+.register .swiper-villa, .register .swiper-town,
+.register .swiper-garden {
+  display: none;
+}
 @media screen and (max-width: 992px) {
   .register {
     flex-direction: column;
     gap: 1.6rem;
-  }
-  .register-img {
-    display: none;
   }
   .register-form {
     width: 100%;
@@ -526,13 +564,32 @@
     width: 13rem;
   }
   .register-form__box-items {
-    flex-direction: row;
+    flex-direction: column;
     gap: 1.5rem;
     width: 100%;
   }
   .register-form__box-item {
     width: auto;
     flex: 1 1 calc((100% - 1.5rem) / 2);
+  }
+}
+@media screen and (max-width: 576px) {
+  .register .swiper-villa,
+  .register .swiper-town,
+  .register .swiper-garden {
+    display: block;
+  }
+  .register-form__box-item {
+    height: auto;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  .register-form__box-item h3 {
+    z-index: 10;
+  }
+  .register-form__box-item > img {
+    display: none;
   }
 }
 @media screen and (max-width: 400px) {
@@ -559,29 +616,31 @@ li {
   list-style: none;
 }
 
-.services__items-item--img img, .banner-specials__item img, .header-content_logo img, .main-banner-img img, .swiper-3-item img, .register-img img {
+.services__items-item--img img, .banner-specials__item img, .header-content_logo img, .swiper-3-item img, .register-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.services__items-item h6, .footer-info__addresses > span, .footer-info__others .hotline span:first-child, .footer-info__others .email span:first-child, .footer-info__others .socials span:first-child, .packages-top_item--title {
+.services__items-item h6, .footer-info__addresses span, .footer-info__others .hotline span:first-child, .footer-info__others .email span:first-child, .footer-info__others .socials span:first-child, .packages-top_item--title {
   font-size: 2rem;
   font-weight: 700;
   line-height: 2.4rem;
+  text-align: center;
 }
 
-.banner-1 .author-info p, .footer-info__others .hotline span:last-child, .footer-info__others .email span:last-child, .footer-info__others .socials span:last-child, .swiper-item p {
+.footer-info__others .hotline span:last-child, .footer-info__others .email span:last-child, .footer-info__others .socials span:last-child, .swiper-item p {
   font-size: 1.6rem;
   line-height: 2.4rem;
   letter-spacing: 0.1rem;
 }
 
-.survey h2, .contact-socials h2, .services h2, .packages-middle h2, .swiper-item h2, .register-form > h2, .register-form__box h2 {
+.template h2, .survey h2, .contact-socials h2, .services h2, .packages-middle h2, .swiper-item h2, .register-form > h2, .register-form__box h2 {
   font-size: 3.4rem;
   font-weight: 700;
   line-height: 4rem;
+  text-align: center;
 }
 
 .hidden {
@@ -591,39 +650,42 @@ li {
 .banner-1 {
   margin-bottom: 6rem;
   grid-column: container-start/container-end;
-  height: 551px;
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 15vw;
-  padding-top: 4.8rem;
 }
 .banner-1__img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  position: relative;
 }
 .banner-1__img img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: auto;
 }
 .banner-1 .author-info {
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  height: 100%;
+  gap: 0.8rem;
   color: white;
   flex: 0 2 454px;
   z-index: 1;
+  position: absolute;
+  right: 14vw;
+  top: 0;
+  padding: 1.2rem 0;
+  padding-top: calc(1.2rem + 2vw);
+  width: calc(14.4rem + 21vw);
 }
 .banner-1 .author-info__name {
   font-size: 4.8rem;
   font-weight: 700;
   line-height: 5.6rem;
   text-align: center;
+}
+.banner-1 .author-info p {
+  font-size: calc(1.2rem + 0.2vw);
+  font-weight: 400;
+  line-height: 24px;
 }
 .banner-1 .author-info .swiper {
   display: none;
@@ -636,24 +698,40 @@ li {
 .banner-1 .author-info .swiper .swiper-pagination-bullet-active {
   background-color: #9e9e9e;
 }
+@media screen and (max-width: 1440px) {
+  .banner-1::before {
+    content: "Phong Thủy Sư Tam Nguyên";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -6rem;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    width: 100%;
+  }
+  .banner-1 .author-info h3 {
+    display: none;
+  }
+}
 @media screen and (max-width: 992px) {
   .banner-1 {
     padding-bottom: 1.6rem;
   }
   .banner-1 .author-info {
     flex-basis: 35%;
+    right: 0;
   }
   .banner-1 .author-info .swiper {
     display: block;
-    width: 38vw;
-    height: -moz-fit-content;
-    height: fit-content;
+    width: calc(12.4rem + 21vw);
+    height: 100%;
   }
   .banner-1 .author-info > p {
     display: none;
   }
 }
-
 .banner-specials {
   grid-column: container-start/container-end;
   display: flex;
@@ -832,6 +910,11 @@ li {
   width: 100%;
   height: 490px;
 }
+@media screen and (max-width: 992px) {
+  .survey h2 {
+    max-width: 100%;
+  }
+}
 
 @keyframes append {
   from {
@@ -857,4 +940,56 @@ li {
   left: 0;
   width: 24px;
   height: 24px;
+}
+
+.template {
+  grid-column: col-start 2/col-end -2;
+  margin-bottom: 4.8rem;
+}
+.template h2 {
+  margin-bottom: 1.6rem;
+}
+.template-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+.template-items_item {
+  border-radius: 0.8rem;
+  position: relative;
+  flex-basis: calc(50% - 0.4rem);
+  cursor: pointer;
+}
+.template-items_item h4 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 40px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.template-items_item > img {
+  width: 100%;
+  height: auto;
+}
+.template-items_item > img:last-of-type {
+  display: none;
+}
+@media screen and (max-width: 1440px) {
+  .template {
+    margin-bottom: 9.6rem;
+  }
+}
+@media screen and (max-width: 992px) {
+  .template-items_item > img:first-of-type {
+    display: none;
+  }
+  .template-items_item > img:last-of-type {
+    display: block;
+  }
 }/*# sourceMappingURL=styles.css.map */

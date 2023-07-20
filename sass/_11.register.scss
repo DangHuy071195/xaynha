@@ -80,19 +80,14 @@
 				background-size: cover;
 				border-radius: 0.8rem;
 				width: 448px;
+				position: relative;
+				margin-bottom: 1.6rem;
 
-				&:first-of-type {
-					background: url('/images/biet-thu.png') top left no-repeat;
-					margin-bottom: 1.6rem;
-				}
-				&:nth-child(2) {
-					background: url('/images/nhavuon.png') top left no-repeat;
-					margin-bottom: 1.6rem;
-				}
-				&:last-of-type {
-					background: url('/images/nhapho.png') top left no-repeat;
-				}
 				h3 {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
 					color: white;
 					text-align: center;
 					font-size: 3.4rem;
@@ -110,13 +105,15 @@
 		}
 	}
 
+	& .swiper-villa,
+	& .swiper-town,
+	.swiper-garden {
+		display: none;
+	}
+
 	@include media-tablet {
 		flex-direction: column;
 		gap: 1.6rem;
-
-		&-img {
-			display: none;
-		}
 
 		&-form {
 			width: 100%;
@@ -125,7 +122,7 @@
 			}
 			&__box {
 				&-items {
-					flex-direction: row;
+					flex-direction: column;
 					gap: 1.5rem;
 					width: 100%;
 				}
@@ -133,6 +130,26 @@
 					width: auto;
 					flex: 1 1 calc((100% - 1.5rem) / 2);
 				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 576px) {
+		& .swiper-villa,
+		.swiper-town,
+		.swiper-garden {
+			display: block;
+		}
+		&-form__box-item {
+			height: auto;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			h3 {
+				z-index: 10;
+			}
+			& > img {
+				display: none;
 			}
 		}
 	}

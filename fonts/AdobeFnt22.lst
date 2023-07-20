@@ -1,0 +1,300 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+FullName:Minion Pro
+MenuName:Minion Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:217280
+FileModTime:1329281626
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-Black
+FamilyName:SVN-Century Gothic
+StyleName:Black
+FullName:SVN-Century Gothic Black
+MenuName:SVN-Century Gothic Black
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-Black.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:128224
+FileModTime:1628265806
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SVN-Century Gothic Black
+NameArray:0,Win,1,SVN-Century Gothic Black
+NameArray:0,Win,16,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-Bold
+FamilyName:SVN-Century Gothic
+StyleName:Bold
+FullName:SVN-Century Gothic Bold
+MenuName:SVN-Century Gothic
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:138536
+FileModTime:1628265774
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SVN-Century Gothic Bold
+NameArray:0,Win,1,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-BoldItalic
+FamilyName:SVN-Century Gothic
+StyleName:Bold Italic
+FullName:SVN-Century Gothic Bold Italic
+MenuName:SVN-Century Gothic
+StyleBits:3
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-BoldItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:130796
+FileModTime:1628265779
+WeightClass:700
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,SVN-Century Gothic Bold Italic
+NameArray:0,Win,1,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-ExtraBd
+FamilyName:SVN-Century Gothic
+StyleName:ExtraBold
+FullName:SVN-Century Gothic ExtraBold
+MenuName:SVN-Century Gothic ExtraBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-ExtraBold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:159316
+FileModTime:1628265781
+WeightClass:800
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SVN-Century Gothic ExtraBold
+NameArray:0,Win,1,SVN-Century Gothic ExtraBold
+NameArray:0,Win,16,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-Regular
+FamilyName:SVN-Century Gothic
+StyleName:Regular
+FullName:SVN-Century Gothic
+MenuName:SVN-Century Gothic
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:125992
+FileModTime:1628265735
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SVN-Century Gothic
+NameArray:0,Win,1,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-Italic
+FamilyName:SVN-Century Gothic
+StyleName:Italic
+FullName:SVN-Century Gothic Italic
+MenuName:SVN-Century Gothic
+StyleBits:1
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-RegularItalic.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:121080
+FileModTime:1628265739
+WeightClass:400
+WidthClass:5
+AngleClass:1
+NameArray:0,Mac,4,SVN-Century Gothic Italic
+NameArray:0,Win,1,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:SVN-CenturyGothic-SemiBd
+FamilyName:SVN-Century Gothic
+StyleName:SemiBold
+FullName:SVN-Century Gothic SemiBold
+MenuName:SVN-Century Gothic SemiBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\SVN-CenturyGothic-SemiBold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:158548
+FileModTime:1628265742
+WeightClass:600
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,SVN-Century Gothic SemiBold
+NameArray:0,Win,1,SVN-Century Gothic SemiBold
+NameArray:0,Win,16,SVN-Century Gothic
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UTM-Davida
+FamilyName:UTM Davida
+StyleName:Regular
+FullName:UTM Davida
+MenuName:UTM Davida
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\UTM Davida.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:61556
+FileModTime:1262870206
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,UTM Davida
+NameArray:0,Win,1,UTM Davida
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:UVFSlimTony
+FamilyName:UVF Slim Tony
+StyleName:Regular
+FullName:UVF Slim Tony
+MenuName:UVF Slim Tony
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\UVF SlimTony.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:288432
+FileModTime:1359368206
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,18,UVF Slim Tony
+NameArray:0,Mac,4,UVF Slim Tony
+NameArray:0,Win,1,UVF Slim Tony
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Calibri
+FamilyName:Calibri
+StyleName:Regular
+FullName:Calibri
+MenuName:Calibri
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\calibri.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:1648120
+FileModTime:1575709706
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Calibri
+NameArray:0,Win,1,Calibri
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Wingdings-Regular
+FamilyName:Wingdings
+StyleName:Regular
+FullName:Wingdings
+MenuName:Wingdings
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:E:\Dropbox\DATA\CONG TY TAM NGUYEN\NHAN DIEN THUONG HIEU\1. NHẬN DIỆN THƯƠNG HIỆU 2022\DICH VU\Hồ sơ cải thiện VMCĐ\Hồ sơ cải thiện VMCĐ\Maket CTVMCD sua Folder\Document fonts\wingding.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:82180
+FileModTime:1575709707
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Wingdings
+NameArray:0,Win,1,Wingdings
+%EndFont
+
