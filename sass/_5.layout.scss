@@ -1,7 +1,7 @@
 #header {
 	grid-column: container-start / container-end;
 	height: 5.6rem;
-	background-color: red;
+	background-color: #b5030a;
 }
 
 .header {
@@ -32,15 +32,28 @@
 
 .main-banner {
 	grid-column: container-start / container-end;
-	margin-bottom: 98px;
+	margin-bottom: 4.8rem;
 	&-img {
 		width: 100%;
 		height: 100%;
 		img {
-			// @extend %img;
-			// margin-bottom: 4.8rem;
 			width: 100%;
 			height: auto;
+			&:last-child {
+				display: none;
+			}
+		}
+	}
+
+	@include media-tablet {
+		margin-bottom: 1.6rem;
+		&-img img {
+			&:first-child {
+				display: none;
+			}
+			&:last-child {
+				display: block;
+			}
 		}
 	}
 }
@@ -53,7 +66,7 @@
 
 .footer {
 	&-main {
-		max-width: 1200px;
+		max-width: 1040px;
 		margin: auto;
 		color: white;
 	}
@@ -74,6 +87,7 @@
 			span {
 				@extend %sec-title;
 				font-weight: 700;
+				text-align: left !important;
 			}
 			p {
 				font-size: 1.6rem;
@@ -116,9 +130,41 @@
 		&-info {
 			flex-direction: column;
 			align-items: flex-start;
+			gap: 1.6rem;
 			&__addresses {
 				flex-basis: auto;
+			}
+			&__addresses {
+				span {
+					font-size: 14px !important;
+					font-weight: 700 !important;
+					line-height: 16px !important;
+				}
+				p {
+					font-size: 14px !important;
+					font-weight: 400 !important;
+					line-height: 16px !important;
+					margin-bottom: 0.8rem;
+				}
+			}
+			&__others {
+				gap: 0.4rem;
+				& .hotline,
+				& .email,
+				& .socials {
+					span {
+						&:first-child {
+							text-align: left !important;
+							font-size: 16px;
+							font-weight: 600;
+							line-height: 24px; /* 150% */
+						}
+						&:last-child {
+						}
+					}
+				}
 			}
 		}
 	}
 }
+

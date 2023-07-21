@@ -1,11 +1,11 @@
-const swiper = new Swiper('.swiper-2', {
+const swiperT = new Swiper('.swiper-2', {
 	// Optional parameters
 	direction: 'horizontal',
 	loop: true,
 
 	// If we need pagination
 	pagination: {
-		el: '.swiper-pagination-2',
+		el: '.swiper-pagination.swiper-pagination-2',
 		clickable: true,
 	},
 
@@ -17,13 +17,22 @@ const swiper = new Swiper('.swiper-2', {
 	},
 })
 
+const swiper = new Swiper('.swiper', {
+	direction: 'horizontal',
+	loop: true,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+})
+
 const swiper1 = new Swiper('.swiper-1', {
 	direction: 'horizontal',
 	loop: true,
 	touchMoveStopPropagation: true,
 
 	pagination: {
-		el: '.swiper-pagination-1',
+		el: '.swiper-pagination.swiper-pagination-1',
 		clickable: true,
 	},
 	navigation: {
@@ -166,4 +175,138 @@ window.onresize = function (event) {
 		bannerImg.height = 551
 	}
 }
+
+const steps = document.querySelectorAll('.step-child')
+const advideStep = document.querySelector('.advise-steps')
+const width = advideStep.getBoundingClientRect().width
+console.log('steps', steps)
+console.log('width', width)
+const titleElm = document.querySelector('.advise-title')
+const contentBox = document.querySelector('.advise-content--text')
+const progress = document.querySelector('span.advise-steps')
+const checkStepCss = () => {
+	console.log('run here...')
+	const curImg = advideStep.querySelector('.current-img')
+	const curIdxOfImg = Array.from(steps).findIndex((item) => item === curImg)
+	console.log('curIdxOfImg', curIdxOfImg)
+	Array.from(steps).forEach((step, idx) => {
+		if (curIdxOfImg >= idx) {
+			step.classList.add('checked')
+		} else {
+			step.classList.remove('checked')
+		}
+	})
+}
+const clickStepHandler = (step, idx) => {
+	step.addEventListener('click', () => {
+		checkStepCss()
+
+		contentBox.innerHTML = ''
+		const url = step.getAttribute('data-image')
+		const title = step.getAttribute('data-title')
+		// const imgPart = contentBox.querySelector('img')
+		const newImg = document.createElement('img')
+		newImg.src = url
+		newImg.style.width = 700
+		newImg.style.height = 500
+		contentBox.appendChild(newImg)
+		console.log('progress', progress)
+		titleElm.innerHTML = title
+		console.log('idx to 100%', idx)
+
+		progress.style.width = `${idx * 0.125 * (width - 48)}px`
+		progress.classList.add('active')
+		if (idx === 8) {
+			progress.style.width = `100%`
+		}
+		const curImg = advideStep.querySelector('.current-img')
+		const curIdxOfImg = Array.from(steps).findIndex((item) => item === curImg)
+		curImg.classList.remove('current-img')
+		step.classList.add('current-img')
+		console.log('curIdxOfImg', curIdxOfImg, idx)
+		if ((curIdxOfImg && curIdxOfImg < idx) || curIdxOfImg === 0) {
+			newImg.classList.add('fade-left')
+		} else {
+			newImg.classList.add('fade-right')
+		}
+		checkStepCss()
+	})
+}
+
+Array.from(steps).forEach((step, idx) => {
+	clickStepHandler(step, idx)
+})
+
+checkStepCss()
+
+const banner1 = document.querySelector('.banner-1__img')
+const bannerImg = banner1.querySelector('img')
+const swiperFirst = document.querySelector('.swiper')
+
+if (window.innerWidth < 576) {
+	bannerImg.src = '/images/banner-1-mob.png'
+	bannerImg.width = 375
+	bannerImg.height = 282
+} else {
+	bannerImg.src = '/images/thay-tam-nguyen.png'
+	bannerImg.width = 1440
+	bannerImg.height = 551
+}
+
+swiperFirst.style.cssText = `height: ${bannerImg.getBoundingClientRect().height - 24}px`
+
+window.onresize = function (event) {
+	if (window.innerWidth < 576) {
+		bannerImg.src = '/images/banner-1-mob.png'
+		bannerImg.width = 375
+		bannerImg.height = 282
+	} else {
+		bannerImg.src = '/images/thay-tam-nguyen.png'
+		bannerImg.width = 1440
+		bannerImg.height = 551
+	}
+	swiperFirst.style.cssText = `height: ${bannerImg.getBoundingClientRect().height - 24}px`
+}
+
+const swiper5 = new Swiper('.swiper-5', {
+	direction: 'horizontal',
+	touchMoveStopPropagation: true,
+	loop: true,
+	on: {
+		init: function () {
+			console.log('swiper initialized')
+			const title = document.querySelector('.swiper-advise__title')
+			const swiperEl = document.querySelector('.swiper-5')
+			const imgs = swiperEl.querySelectorAll('.img-data')
+			const curImg = Array.from(imgs)[0]
+			title.innerHTML = curImg.getAttribute('data-title')
+		},
+	},
+
+	pagination: {
+		el: '.swiper-pagination.swiper-pagination-5',
+		clickable: true,
+	},
+	navigation: {
+		nextEl: '.swiper-button-next.swiper-button-next-5',
+		prevEl: '.swiper-button-prev.swiper-button-prev-5',
+	},
+})
+
+swiper5.on('activeIndexChange', function (swiper) {
+	console.log('activeIndexChange', swiper)
+	console.log('activeIndexChange', swiper.activeIndex)
+	const title = document.querySelector('.swiper-advise__title')
+	const swiperEl = document.querySelector('.swiper-5')
+	const imgs = swiperEl.querySelectorAll('.img-data')
+	const curImg = Array.from(imgs)[swiper.activeIndex]
+	console.log('curImg', curImg)
+	console.log('imgs', imgs)
+	console.log('title', title)
+	console.log('curImg', curImg.getAttribute('data-title'))
+	title.innerHTML = curImg.getAttribute('data-title')
+})
+swiper5.on('slideChange', function (swiper) {
+	console.log('slide changed', swiper)
+})
 

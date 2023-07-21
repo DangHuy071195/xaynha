@@ -1,10 +1,15 @@
 .slider {
 	grid-column: container-start / container-end;
 	height: 300px;
-	background-color: color(--tertiary);
+	background-color: color(--primary);
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 4.8rem;
+	margin-bottom: 5.5rem;
+	@include media-tablet {
+		height: 196px;
+		border-radius: 8px;
+		margin-bottom: 1.6rem;
+	}
 }
 
 .swiper-top {
@@ -17,18 +22,59 @@
 	gap: 5vw;
 	align-items: center;
 	height: 100%;
-	max-width: 80vw;
+	max-width: 1067px;
 	margin: 0 auto;
 	color: white;
-	h2 {
+	padding: 0 84px;
+
+	& > h2 {
 		@extend %sec-h2;
+		text-align: left !important;
+		flex: 0 0 336px;
+		&.mob {
+			display: none;
+		}
 	}
-	p {
+	.line-2 {
+		flex: 0 0 0.5rem;
+	}
+	& > p {
 		@extend %sec-para;
+		flex-grow: 0;
+		&.mob {
+			display: none;
+		}
 	}
 	@include media-tablet {
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
+		gap: 2.4rem;
+		padding: 1.6rem;
+		height: 196px;
+		h2 {
+			&:first-child {
+				display: none;
+			}
+			&.mob {
+				display: block;
+			}
+			flex-basis: 48px;
+			flex-grow: 0;
+			width: 100%;
+			text-align: center !important;
+			font-size: 20px !important;
+			line-height: 24px !important; /* 120% */
+		}
+
+		p {
+			display: none;
+			&:last-child {
+				display: block;
+				font-size: 14px;
+				font-weight: 600;
+				line-height: 16px;
+			}
+		}
 
 		.line-2 {
 			display: none;

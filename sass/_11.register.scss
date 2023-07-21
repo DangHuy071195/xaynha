@@ -4,12 +4,16 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 5vw;
-	margin-bottom: 5.6rem;
+	max-width: 1040px;
+	margin: auto;
+	margin-bottom: 4.8rem;
 	&-img {
 		width: 74px;
-		height: 267px;
+		height: 100%;
+		display: flex;
+		align-items: center;
 		img {
-			@extend %img;
+			height: 267px;
 		}
 	}
 	&-form {
@@ -17,6 +21,7 @@
 		flex-direction: column;
 		padding: 0 1.6rem;
 		flex-grow: 1;
+		width: calc((100% - 75px) / 2);
 		&__controls {
 			display: flex;
 			flex-direction: column;
@@ -27,6 +32,10 @@
 				font-weight: 600;
 				line-height: 16px;
 				color: #000;
+			}
+			input {
+				height: 40px;
+				line-height: 40px;
 			}
 			input,
 			textarea {
@@ -65,11 +74,13 @@
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			flex-basis: calc((100% - 75px) / 2);
 
 			h2 {
 				@extend %sec-h2;
 				margin-bottom: 0.8rem;
 				text-align: center;
+				white-space: nowrap;
 			}
 			&-item {
 				display: flex;
@@ -79,9 +90,11 @@
 				width: 100%;
 				background-size: cover;
 				border-radius: 0.8rem;
-				width: 448px;
 				position: relative;
-				margin-bottom: 1.6rem;
+				> img {
+					width: 100%;
+					height: 100%;
+				}
 
 				h3 {
 					position: absolute;
@@ -101,6 +114,7 @@
 				flex-direction: column;
 				align-items: center;
 				width: 100%;
+				gap: 0.8rem;
 			}
 		}
 	}
@@ -114,11 +128,32 @@
 	@include media-tablet {
 		flex-direction: column;
 		gap: 1.6rem;
+		margin-bottom: 1.6rem;
+		&-img {
+			display: none;
+		}
 
 		&-form {
 			width: 100%;
+			&__controls {
+				label {
+					font-family: SVN-Century Gothic;
+					font-size: 12px;
+					font-style: normal;
+					font-weight: 400;
+					line-height: 16px; /* 133.333% */
+				}
+			}
+			h2 {
+				font-size: 20px !important;
+				line-height: 24px !important;
+			}
 			button {
 				width: 13rem;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 16px;
 			}
 			&__box {
 				&-items {
@@ -129,6 +164,11 @@
 				&-item {
 					width: auto;
 					flex: 1 1 calc((100% - 1.5rem) / 2);
+				}
+				h2 {
+					font-size: 20px !important;
+					font-weight: 700 !important;
+					line-height: 24px !important; /* 120% */
 				}
 			}
 		}
@@ -152,6 +192,30 @@
 			& > img {
 				display: none;
 			}
+		}
+		&-form__controls {
+			margin-bottom: 0.8rem;
+			& label {
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 16px;
+			}
+		}
+		&-form {
+			&__btn {
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 16px;
+			}
+			&__box h2 {
+				font-size: 20px !important;
+				font-weight: 700 !important;
+				line-height: 24px !important;
+			}
+		}
+		&-img {
+			display: none;
 		}
 	}
 
